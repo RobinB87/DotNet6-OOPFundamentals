@@ -7,6 +7,18 @@ public class Customer
     public string LastName { get; set; } = string.Empty;
 	public string FullName
 	{
-        get => $"{LastName},{FirstName}"; 
+        get
+        {
+            var fullName = LastName;
+            if (!string.IsNullOrWhiteSpace(FirstName))
+            {
+                if (!string.IsNullOrWhiteSpace(fullName))
+                {
+                    fullName += ", ";
+                }
+                fullName += FirstName;
+            }
+            return fullName;
+        }
 	}
 }

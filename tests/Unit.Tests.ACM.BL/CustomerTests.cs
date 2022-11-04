@@ -12,7 +12,27 @@ namespace Unit.Tests.ACM.BL
                 FirstName = "Henkie",
                 LastName = "Blaatje"
             };
-            Assert.Equal("Blaatje,Henkie", customer.FullName);
+            Assert.Equal("Blaatje, Henkie", customer.FullName);
+        }
+
+        [Fact]
+        public void FullNameFirstNameEmpty()
+        {
+            var customer = new Customer
+            {
+                FirstName = "Henkie",
+            };
+            Assert.Equal("Henkie", customer.FullName);
+        }
+
+        [Fact]
+        public void FullNameLastNameEmpty()
+        {
+            var customer = new Customer
+            {
+                LastName = "Blaatje"
+            };
+            Assert.Equal("Blaatje", customer.FullName);
         }
     }
 }
