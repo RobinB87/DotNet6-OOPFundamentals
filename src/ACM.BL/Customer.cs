@@ -18,4 +18,8 @@ public class Customer
                 : fullName += $", {FirstName}";
         }
     }
+
+    // static denotes the member belongs to the class itself,
+    // rather than to any specific instance
+    public static int InstanceCount { get; set; }
 }
