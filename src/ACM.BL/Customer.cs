@@ -5,7 +5,7 @@ public class Customer
     public string EmailAddress { get; set; } = string.Empty;
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
-	public string MyProperty
+	public string FullName
 	{
         get => $"{LastName},{FirstName}"; 
 	}
