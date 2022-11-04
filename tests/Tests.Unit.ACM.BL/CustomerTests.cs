@@ -58,5 +58,36 @@ namespace Unit.Tests.ACM.BL
             
             Assert.Equal(3, Customer.InstanceCount);
         }
+
+        [Fact]
+        public void IsValid()
+        {
+            var customer = new Customer
+            {
+                LastName = "Blaatje",
+                EmailAddress = "blaatje@blaat.com"
+            };
+            Assert.True(customer.IsValid());
+        }
+
+        [Fact]
+        public void NotValid_No_LastName()
+        {
+            var customer = new Customer
+            {
+                EmailAddress = "blaatje@blaat.com",
+            };
+            Assert.False(customer.IsValid());
+        }
+
+        [Fact]
+        public void NotValid_No_EmailAddress()
+        {
+            var customer = new Customer
+            {
+                LastName = "Blaatje",
+            };
+            Assert.False(customer.IsValid());
+        }
     }
 }
