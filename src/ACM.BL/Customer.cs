@@ -1,6 +1,12 @@
 ﻿namespace ACM.BL;
 public class Customer
 {
+    public Customer() { }
+    public Customer(int id)
+    {
+        Id = id;
+    }
+
     public int Id { get; private set; }
     public string EmailAddress { get; set; } = string.Empty;
     public string FirstName { get; set; } = string.Empty;
