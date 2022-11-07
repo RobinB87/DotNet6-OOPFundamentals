@@ -11,7 +11,14 @@ public class Product : EntityBase
 
     public int Id { get; private set; }
     public decimal? CurrentPrice { get; set; }
-    public string Name { get; set; } = string.Empty;
+
+    private string _name;
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public string Description { get; set; } = string.Empty;
 
     /// <summary>
