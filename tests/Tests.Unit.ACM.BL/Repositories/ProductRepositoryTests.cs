@@ -1,6 +1,4 @@
-﻿using ACM.BL.Repositories;
-
-namespace Tests.Unit.ACM.BL.Repositories;
+﻿namespace Tests.Unit.ACM.BL.Repositories;
 public class ProductRepositoryTests
 {
     [Fact]

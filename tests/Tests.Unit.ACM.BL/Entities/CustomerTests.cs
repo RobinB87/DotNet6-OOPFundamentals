@@ -1,6 +1,5 @@
-using ACM.BL.Models;
 
-namespace Tests.Unit.ACM.BL.Models
+namespace Tests.Unit.ACM.BL.Entities
 {
     public class CustomerTests
     {

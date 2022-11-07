@@ -1,6 +1,4 @@
-﻿using ACM.BL.Models;
-
-namespace ACM.BL.Repositories;
+﻿namespace ACM.BL.Repositories;
 public class CustomerRepository
 {
     public IEnumerable<Customer> Get() =>

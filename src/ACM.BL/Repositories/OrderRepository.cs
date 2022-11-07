@@ -1,6 +1,4 @@
-﻿using ACM.BL.Models;
-
-namespace ACM.BL.Repositories;
+﻿namespace ACM.BL.Repositories;
 public class OrderRepository
 {
     public IEnumerable<Order> Get() =>
