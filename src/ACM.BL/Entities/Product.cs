@@ -14,6 +14,10 @@ public class Product : EntityBase
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Use Polymorphism to override the IsValid member of the base class
+    /// </summary>
+    /// <returns></returns>
     public override bool IsValid() =>
         !string.IsNullOrWhiteSpace(Name) &&
         CurrentPrice != null;

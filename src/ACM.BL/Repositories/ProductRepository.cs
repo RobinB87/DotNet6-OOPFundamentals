@@ -16,5 +16,20 @@ public class ProductRepository
             : null;
     }
 
-    public bool Save() => true;
+    public bool Save(Product product)
+    {
+        if (!product.HasChanges) return false;
+        if (!product.IsValid()) return false;
+        if (product.IsNew)
+        {
+            // (database details are not relevant in this project)
+            // insert to database 
+        }
+        else
+        {
+            // update in database
+        }
+
+        return true;
+    }
 }
