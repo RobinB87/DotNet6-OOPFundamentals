@@ -1,6 +1,13 @@
 ﻿namespace ACM.BL.Repositories;
 public class CustomerRepository
 {
+    private AddressRepository _addressRepository;
+    public CustomerRepository(AddressRepository addressRepository)
+    {
+        _addressRepository = addressRepository 
+            ?? throw new ArgumentNullException(nameof(addressRepository));
+    }
+
     public IEnumerable<Customer> Get() =>
         new List<Customer>();
 
@@ -11,7 +18,8 @@ public class CustomerRepository
             {
                 EmailAddress = "fbaggins@hobbiton.me",
                 FirstName = "Frodo",
-                LastName = "Baggins"
+                LastName = "Baggins",
+                AddressList = _addressRepository.GetByCustomerId(id)
             }
             : null;
     }

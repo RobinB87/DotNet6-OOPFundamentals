@@ -15,7 +15,6 @@ public class Address
     public string PostalCode { get; set; } = string.Empty;
     public string Country { get; set; } = string.Empty;
     public string StateOrProvince { get; set; } = string.Empty;
-    public string Validate { get; set; } = string.Empty;
 
     public bool IsValid() =>
         !string.IsNullOrWhiteSpace(PostalCode);
