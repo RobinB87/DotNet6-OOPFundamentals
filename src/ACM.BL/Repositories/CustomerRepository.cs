@@ -8,15 +8,14 @@ public class CustomerRepository
 
     public Customer? Get(int id)
     {
-        if (id == 1)
-            return new Customer
+        return id == 1
+            ? new Customer
             {
                 EmailAddress = "fbaggins@hobbiton.me",
                 FirstName = "Frodo",
                 LastName = "Baggins"
-            };
-
-        return new Customer();
+            }
+            : null;
     }
 
     public bool Save() => true;

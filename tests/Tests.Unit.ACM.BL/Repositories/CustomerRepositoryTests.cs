@@ -6,9 +6,8 @@ public class CustomerRepositoryTests
     [Fact]
     public void GetValid()
     {
-        var id = 1;
         var repository = new CustomerRepository();
-        var expected = repository.Get(id);
-        Assert.Equal("Frodo", expected?.FirstName);
+        var actual = repository.Get(1);
+        Assert.Equal("Frodo", actual?.FirstName);
     }
 }
