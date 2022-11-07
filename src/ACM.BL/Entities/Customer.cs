@@ -1,10 +1,16 @@
 ﻿namespace ACM.BL.Entities;
 public class Customer
 {
-    public Customer() { }
+    /// <summary>
+    /// Constructor chaining: use it when a constructor needs to call another
+    /// in this case the default constructor calls the parameterized constructor
+    /// with a default value of 0
+    /// </summary>
+    public Customer() : this(0) { }
     public Customer(int id)
     {
         Id = id;
+        AddressList = new List<Address>();
     }
 
     public int Id { get; private set; }
@@ -25,8 +31,17 @@ public class Customer
         }
     }
 
-    // static denotes the member belongs to the class itself,
-    // rather than to any specific instance
+    /// <summary>
+    /// Example of composition: objects from one class is constructed of
+    /// objects from other class. Construction of the Customer object
+    /// constructs a list of address objects
+    /// </summary>
+    public IEnumerable<Address> AddressList { get; set; }
+
+    /// <summary>
+    /// Static denotes the member belongs to the class itself,
+    /// rather than to any specific instance
+    /// </summary>
     public static int InstanceCount { get; set; }
 
     public bool IsValid() =>
