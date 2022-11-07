@@ -26,12 +26,28 @@ public class ProductRepositoryTests
     }
 
     [Fact]
-    public void SaveTestInvalid_MissingPrice()
+    public void SaveTestInvalid_PriceNull()
     {
         var repository = new ProductRepository();
         var updatedProduct = new Product(2)
         {
             CurrentPrice = null,
+            Description = "Assorted Set of 4 Bright Yellow Mini Sunflowers",
+            Name = "Sunflowers",
+            HasChanges = true
+        };
+
+        var actual = repository.Save(updatedProduct);
+        Assert.False(actual);
+    }
+
+    [Fact]
+    public void SaveTestInvalid_Price0()
+    {
+        var repository = new ProductRepository();
+        var updatedProduct = new Product(2)
+        {
+            CurrentPrice = 0,
             Description = "Assorted Set of 4 Bright Yellow Mini Sunflowers",
             Name = "Sunflowers",
             HasChanges = true

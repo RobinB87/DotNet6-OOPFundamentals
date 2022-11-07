@@ -20,5 +20,5 @@ public class Product : EntityBase
     /// <returns></returns>
     public override bool IsValid() =>
         !string.IsNullOrWhiteSpace(Name) &&
-        CurrentPrice != null;
+        CurrentPrice.GetValueOrDefault() != 0;
 }

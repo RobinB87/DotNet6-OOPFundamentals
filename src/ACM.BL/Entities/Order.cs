@@ -1,5 +1,8 @@
-﻿namespace ACM.BL.Entities;
-public class Order
+﻿using ACM.BL.Entities.Base;
+using System.Net.Mail;
+
+namespace ACM.BL.Entities;
+public class Order : EntityBase
 {
     public Order() : this(0) { }
     public Order(int id)
@@ -20,4 +23,10 @@ public class Order
     public int ShippingAddressId { get; set; }
     public DateTimeOffset? OrderDate { get; set; }
     public List<OrderItem> OrderItems { get; set; }
+
+    public override bool IsValid() =>
+        CustomerId != 0 &&
+        ShippingAddressId != 0 &&
+        OrderDate != null &&
+        OrderItems.Any();
 }

@@ -1,5 +1,7 @@
-﻿namespace ACM.BL.Entities;
-public class Address
+﻿using ACM.BL.Entities.Base;
+
+namespace ACM.BL.Entities;
+public class Address : EntityBase
 {
     public Address() { }
     public Address(int id)
@@ -16,6 +18,6 @@ public class Address
     public string Country { get; set; } = string.Empty;
     public string StateOrProvince { get; set; } = string.Empty;
 
-    public bool IsValid() =>
+    public override bool IsValid() =>
         !string.IsNullOrWhiteSpace(PostalCode);
 }

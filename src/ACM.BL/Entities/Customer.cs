@@ -1,5 +1,7 @@
-﻿namespace ACM.BL.Entities;
-public class Customer
+﻿using ACM.BL.Entities.Base;
+
+namespace ACM.BL.Entities;
+public class Customer : EntityBase
 {
     /// <summary>
     /// Constructor chaining: use it when a constructor needs to call another
@@ -45,7 +47,7 @@ public class Customer
     /// </summary>
     public static int InstanceCount { get; set; }
 
-    public bool IsValid() =>
+    public override bool IsValid() =>
         !string.IsNullOrWhiteSpace(LastName) &&
         !string.IsNullOrWhiteSpace(EmailAddress);
 }
