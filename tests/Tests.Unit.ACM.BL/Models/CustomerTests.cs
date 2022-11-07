@@ -1,6 +1,6 @@
-using ACM.BL;
+using ACM.BL.Models;
 
-namespace Unit.Tests.ACM.BL
+namespace Tests.Unit.ACM.BL.Models
 {
     public class CustomerTests
     {
@@ -55,7 +55,7 @@ namespace Unit.Tests.ACM.BL
                 FirstName = "Henk Jr",
             };
             Customer.InstanceCount += 1;
-            
+
             Assert.Equal(3, Customer.InstanceCount);
         }
 

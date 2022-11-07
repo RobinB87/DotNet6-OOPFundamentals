@@ -1,4 +1,4 @@
-﻿namespace ACM.BL;
+﻿namespace ACM.BL.Models;
 public class Customer
 {
     public Customer() { }
@@ -29,15 +29,7 @@ public class Customer
     // rather than to any specific instance
     public static int InstanceCount { get; set; }
 
-    public IEnumerable<Customer> Get() => 
-        new List<Customer>();
-
-    public Customer? Get(int id) => 
-        Get().FirstOrDefault(c => c.Id == id);
-
     public bool IsValid() =>
         !string.IsNullOrWhiteSpace(LastName) &&
         !string.IsNullOrWhiteSpace(EmailAddress);
-
-    public bool Save() => true;
 }

@@ -1,4 +1,4 @@
-﻿namespace ACM.BL;
+﻿namespace ACM.BL.Models;
 public class OrderItem
 {
     public OrderItem() { }
