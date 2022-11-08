@@ -1,7 +1,8 @@
 ﻿using ACM.BL.Entities.Base;
+using Acme.Common.Services.Interfaces;
 
 namespace ACM.BL.Entities;
-public class Customer : EntityBase
+public class Customer : EntityBase, ILoggable
 {
     /// <summary>
     /// Constructor chaining: use it when a constructor needs to call another
@@ -40,6 +41,9 @@ public class Customer : EntityBase
     /// constructs a list of address objects
     /// </summary>
     public IEnumerable<Address> AddressList { get; set; }
+
+    public string Log() =>
+        $"{Id}: {FullName} Email: {EmailAddress} Status: {EntityState}";
 
     /// <summary>
     /// Static denotes the member belongs to the class itself,

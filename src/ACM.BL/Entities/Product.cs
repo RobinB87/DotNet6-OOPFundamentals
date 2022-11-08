@@ -1,8 +1,9 @@
 ﻿using ACM.BL.Entities.Base;
 using Acme.Common;
+using Acme.Common.Services.Interfaces;
 
 namespace ACM.BL.Entities;
-public class Product : EntityBase
+public class Product : EntityBase, ILoggable
 {
     public Product() { }
     public Product(int id)
@@ -24,6 +25,9 @@ public class Product : EntityBase
     }
 
     public string Description { get; set; } = string.Empty;
+
+    public string Log() =>
+        $"{Id}: {Name} Detail: {Description} Status: {EntityState}";
 
     /// <summary>
     /// Use Polymorphism to override the IsValid member of the base class
