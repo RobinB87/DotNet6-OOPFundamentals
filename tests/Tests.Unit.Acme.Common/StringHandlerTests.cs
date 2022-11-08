@@ -7,8 +7,7 @@ public class StringHandlerTests
     public void InsertSpacesValid()
     {
         var source = "SonicScrewDriver";
-        var handler = new StringHandler();
-        var actual = handler.InsertSpaces(source);
+        var actual = source.InsertSpaces();
         Assert.Equal("Sonic Screw Driver", actual);
     }
 
@@ -16,8 +15,7 @@ public class StringHandlerTests
     public void InsertSpacesWithExistingSpace()
     {
         var source = "Sonic Screwdriver";
-        var handler = new StringHandler();
-        var actual = handler.InsertSpaces(source);
+        var actual = source.InsertSpaces();
         Assert.Equal("Sonic Screwdriver", actual);
     }
 }

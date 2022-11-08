@@ -1,4 +1,5 @@
 ﻿using ACM.BL.Entities.Base;
+using Acme.Common;
 
 namespace ACM.BL.Entities;
 public class Product : EntityBase
@@ -12,10 +13,13 @@ public class Product : EntityBase
     public int Id { get; private set; }
     public decimal? CurrentPrice { get; set; }
 
-    private string _name;
+    private string _name = string.Empty;
     public string Name
     {
-        get { return _name; }
+        get 
+        {
+            return _name.InsertSpaces();
+        }
         set { _name = value; }
     }
 
